@@ -7,6 +7,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import TextField from '@material-ui/core/TextField';
 
 export const EditAncestor = ({ setEditDialogOpen, isEditDialogOpen, selectedAncestor, updateAncestor }) => {
     const [ firstName, setFirstName ] = useState(selectedAncestor.firstName);
@@ -24,14 +25,8 @@ export const EditAncestor = ({ setEditDialogOpen, isEditDialogOpen, selectedAnce
         <Dialog open={isEditDialogOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Edit</DialogTitle>
         <DialogContent>
-            <div>
-                <label>First Name</label>
-                <input value={firstName} onChange={e => setFirstName(e.target.value)} />
-            </div>
-            <div>
-                <label>Last Name</label>
-                <input value={lastName} onChange={e => setLastName(e.target.value)} />
-            </div>
+            <TextField id="standard-basic" label="First Name" value={firstName} onChange={e => setFirstName(e.target.value)}/>
+            <TextField id="standard-basic" label="Last Name" value={lastName} onChange={e => setLastName(e.target.value)}/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">

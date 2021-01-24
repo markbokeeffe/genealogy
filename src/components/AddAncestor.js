@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import { addAncestor } from '../redux/actions';
 
 export const AddAncestor = ({ addAncestor }) => {
@@ -12,15 +14,11 @@ export const AddAncestor = ({ addAncestor }) => {
     };
     return (
         <div>
-            <div>
-                <label>First Name</label>
-                <input value={firstName} onChange={e => updateFirstName(e.target.value)} />
-            </div>
-            <div>
-                <label>Last Name</label>
-                <input value={lastName} onChange={e => updateLastName(e.target.value)} />
-            </div>
-            <button onClick={handleClick}>Add Ancestor</button>
+            <TextField id="standard-basic" label="First Name" value={firstName} onChange={e => updateFirstName(e.target.value)}/>
+            <TextField id="standard-basic" label="Last Name" value={lastName} onChange={e => updateLastName(e.target.value)}/>
+            <Button variant="contained" color="primary" onClick={handleClick}>
+                Add Ancestor
+            </Button>
         </div>
     );
 }

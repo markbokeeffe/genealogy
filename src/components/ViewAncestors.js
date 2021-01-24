@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 import { getAncestors, getEditDialogIsOpen } from '../redux/selectors';
 import { deleteAncestor, setEditDialogOpen, getData } from '../redux/actions';
 import EditAncestor from './EditAncestor';
@@ -30,8 +31,8 @@ export const ViewAncestors = ({ ancestors, isEditDialogOpen, deleteAncestor, set
                         return (
                             <li key={id}>
                                 {`${firstName} ${lastName}`}
-                                <button onClick={() => handleEdit(id, firstName, lastName)}>Edit</button>
-                                <button onClick={() => deleteEntry(id)}>Delete</button>
+                                <Button variant="contained" onClick={() => handleEdit(id, firstName, lastName)}>Edit</Button>
+                                <Button variant="contained" onClick={() => deleteEntry(id)}>Delete</Button>
                             </li>);
                     }) }
                 </ul>
