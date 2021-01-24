@@ -1,0 +1,5 @@
+export const ADD_ANCESTOR = 'ADD_ANCESTOR';
+export const UPDATE_ANCESTOR = 'UPDATE_ANCESTOR';
+export const DELETE_ANCESTOR = 'DELETE_ANCESTOR';
+export const EDIT_DIALOG_OPEN = 'EDIT_DIALOG_OPEN';
+export const ALL_DATA = 'ALL_DATA';
